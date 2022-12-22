@@ -1,0 +1,137 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::before{
+    
+}
+
+:root{
+    --color-letter-h: rgb(227, 227, 238);
+    --color-letter-p: rgb(159, 159, 204);
+    --bg-conteudo: #1f1542;
+
+}
+
+body {  
+    
+    background-color: rgb(90, 50, 107); 
+    height: 100%;
+    width:100%;
+}
+
+.containe{
+    width:90%;
+    margin: auto;      
+}
+
+
+h1, h2{
+    color: var(--color-letter-h); 
+}
+p{
+    color: var(--color-letter-p); 
+    font-size: 18px;
+    text-align: justify;
+} 
+a{
+    color: white;
+    text-decoration:none;
+}
+header{ 
+    text-align: center;
+    padding-top:20px;
+    background-color: transparent;
+    color: var(--color-letter-p); 
+    padding:20px;
+}
+
+
+main{ 
+    
+}
+.conteudo{
+    margin-top: 30px; 
+    background-color: var(--bg-conteudo);
+    color: var(--color-letter);
+    padding: 20px;
+    border-radius: 10px;
+}
+.conteudo h1{
+    margin: 10px;
+    text-align: center;
+    color: var(--color-letter-h); 
+}
+.conteudo p{
+    padding:10px; 
+}
+ 
+.sections{    
+    display: flex; 
+    gap:16px; 
+    text-align: center;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    margin-top: 40px; 
+    width: 100%;
+}
+section h1{
+    margin-bottom: 10px; 
+    margin-inline: auto;
+    width: fit-content;
+ }
+
+section{
+    background-color: var(--bg-conteudo);  
+    border-radius: 10px;
+    padding:30px;
+    width: 280px;
+    
+     
+}
+
+section p{
+    display: flex;
+    flex-direction: column;
+    gap: 24px; 
+    justify-content: space-between;
+    
+    width:fit-content;
+}
+
+footer{ 
+    margin: 40px 0px 40px ;
+    padding: 40px;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;  
+    display: flex;
+    gap:100px;
+    background-color: var(--bg-conteudo); 
+    
+
+} 
+footer li{
+    text-decoration:none;
+    list-style: none;
+    font-size: 18px;
+}
+footer h3{
+    color: var(--color-letter-h);
+}
+
+footer a{
+    color: var(--color-letter-p);
+}
+ 
+ 
+@media(min-width: 500px){
+    .containe{
+      max-width: 1300px;
+      flex-direction: row;
+      flex-wrap:wrap;
+    }
+  }
+  
