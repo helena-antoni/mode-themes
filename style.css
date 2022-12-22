@@ -2,29 +2,83 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
-::before{
+:root:has(#blue:checked){ 
+    background-color: hsl(253 48% 10%); 
+    --bg-conteudo: hsl(253 30% 17%);  
+    --color-letter-a: hsl(253 51% 100%);
+    --color-letter-h: hsl(253 100% 94%);
+    --color-letter-p: hsl(253 30% 71%);
+    --bg-color-picker: hsl(253 100% 94%);
+    --border-section: hsl(253 51% 100%);
+    --color-lettter-footer: hsl(253 51% 50%);
+    /* linear-gradient(
+        90deg, hsl(252 63% 36%) 0%,
+        hsl(180 73% 25%) 100%);*/   
+}
+
+:root:has(#light:checked){ 
+    background-color: hsl(240 35% 90%); 
+    --bg-conteudo: hsl(240 0% 65%); 
+    --color-letter-a:hsl(240 10% 10%); 
+    --color-letter-h: hsl(240 25% 30%);
+    --color-letter-p: hsl(40 50% 0%); 
+    --bg-color-picker:hsl(240 0% 94%);
+    --border-section: hsl(240 100% 70%);
+    --color-lettter-footer: hsl(240 10% 85%);
+
+    /*linear-gradient(
+        90deg, hsl(240 50% 10%) 0%,
+        hsl(240 0% 50%) 100%);  */ 
+}
+
+:root:has(#pink:checked){ 
+    background-color: hsl(320 70% 90%); 
+    --bg-conteudo: hsl(320 10% 20%); 
+    --color-letter-a: hsl(320 51% 30%); 
+    --color-letter-h: hsl(320 50% 75%);
+    --color-letter-p: hsl(320 30% 90%);
+    --bg-color-picker: hsl(320 30% 90%);
+    --border-section: hsl(50 100% 70%);
+    --color-lettter-footer: hsl(320 50% 50%);
+
+    /*
+    --gradient: linear-gradient(
+        90deg,  hsl(320 73% 40%) 0%,
+        hsl(320 0% 50%) 100%);  */ 
+}
+
+:root:has(#dark:checked){ 
+    background-color: hsl(0 0% 5%); 
+    --bg-conteudo: hsl(0 0% 10%); 
+    --color-letter-a: hsl(0 30% 90%);
+    --color-letter-h: hsl(0 100% 80%);
+    --color-letter-p: hsl(0 30% 100%);
+    --bg-color-picker: hsl(0 30% 100%);
+    --border-section: hsl(0 100% 100%);
+    --color-lettter-footer:  hsl(0 100% 70%);
     
+    /*
+    --gradient: linear-gradient(
+        90deg,  hsl(0 50% 50%) 0%,
+        hsl(0 5% 50%) 100%);  */
+    --bg-form:transparent;  
 }
 
-:root{
-    --color-letter-h: rgb(227, 227, 238);
-    --color-letter-p: rgb(159, 159, 204);
-    --bg-conteudo: #1f1542;
-
-}
-
-body {  
-    
-    background-color: rgb(90, 50, 107); 
+body {   
     height: 100%;
     width:100%;
+    margin:0; 
+    --bg-form:transparent;  
+    
 }
 
 .containe{
     width:90%;
-    margin: auto;      
+    margin: auto; 
+
 }
 
 
@@ -36,22 +90,77 @@ p{
     font-size: 18px;
     text-align: justify;
 } 
+
 a{
-    color: white;
-    text-decoration:none;
+    color: var(--color-letter-a);
+    text-decoration:none; 
+} 
+  
+.color-picker > fieldset{ 
+    display: flex;
+    gap:1rem; 
+    justify-content: center;
+    padding:1rem;
+    padding-left:3rem; 
+    border:0;
+    background-color: var(--bg-color-picker);
+    width: fit-content; 
+    border-radius: 0 0 1rem 1rem; 
+    margin-inline: auto;
+    padding: 1rem; 
+    padding-left: 2rem; 
+    border-radius: 8px; 
+
+    position: fixed;
+    left: 50%;
+    bottom: 1rem;  
+    transform: translate(-50%); 
+    
+    box-shadow: 0 0 1rem rgb(0 0 0 0.9);
+    
 }
+
+.color-picker input[type="radio"]{
+    appearance: none;
+    width: 1.3rem;
+    height: 1.3rem; 
+    outline: 3px solid var(--color-radio, currentColor); 
+    outline-offset: 3px; 
+    border-radius: 50%;
+    
+}
+
+.color-picker input[type="radio"]:checked{
+    background-color: var(--color-radio);
+}
+
+.color-picker input[type="radio"]#light{
+    --color-radio: hsl(240 0% 65%);  
+}
+
+.color-picker input[type="radio"]#pink{
+    --color-radio:hsl(320 51% 40%); 
+
+}
+
+.color-picker input[type="radio"]#blue{
+    --color-radio: rgb(44, 31, 90);
+}  
+
+.color-picker input[type="radio"]#dark{
+    --color-radio:hsl(0 0% 10%); 
+}
+
+
 header{ 
     text-align: center;
     padding-top:20px;
     background-color: transparent;
     color: var(--color-letter-p); 
     padding:20px;
-}
-
-
-main{ 
-    
-}
+} 
+ 
+ 
 .conteudo{
     margin-top: 30px; 
     background-color: var(--bg-conteudo);
@@ -62,76 +171,107 @@ main{
 .conteudo h1{
     margin: 10px;
     text-align: center;
+    width: fit-content;
     color: var(--color-letter-h); 
 }
 .conteudo p{
     padding:10px; 
 }
- 
-.sections{    
+.title{
+    margin:70px 0 30px;
+}
+
+.sections{     
     display: flex; 
-    gap:16px; 
+    gap:30px; 
     text-align: center;
     flex-direction: row; 
-    flex-wrap: wrap; 
-    margin-top: 40px; 
+    flex-wrap: wrap;  
     width: 100%;
-}
-section h1{
-    margin-bottom: 10px; 
-    margin-inline: auto;
+   
     width: fit-content;
+    border-radius: 8px; 
+    padding-top: 25px;  
+    justify-content: flex-start;
  }
-
+ 
 section{
     background-color: var(--bg-conteudo);  
     border-radius: 10px;
     padding:30px;
-    width: 280px;
-    
-     
+    width: 280px;  
+}
+ 
+section h1{
+    margin-bottom: 10px; 
+    margin-inline: auto;
+    width: fit-content;
+ } 
+
+section:hover{
+    transform: scale(1.08);
+    border: 3.5px solid var(--border-section);
+    cursor: pointer;    
+    border-radius: 25px;
+
 }
 
 section p{
     display: flex;
     flex-direction: column;
     gap: 24px; 
-    justify-content: space-between;
-    
+    justify-content: space-between; 
     width:fit-content;
 }
 
 footer{ 
-    margin: 40px 0px 40px ;
-    padding: 40px;
-    width: 100%;
-    height: 200px;
-    border-radius: 10px;  
     display: flex;
     gap:100px;
+    margin: 100px 0px 0 ;
+    padding: 40px;  
+    border-radius: 10px;  
     background-color: var(--bg-conteudo); 
-    
+    flex-wrap: wrap;
+    height: fit-content;
+ 
+}  
+ 
+.footer-categories-list li , 
+.footer-socials li,
+.footer-other li{   
+}
 
-} 
+footer h3{
+    color: var(--color-letter-h);   
+    margin-bottom: 5px; 
+    text-align: center;
+}
 footer li{
     text-decoration:none;
     list-style: none;
-    font-size: 18px;
+    font-size: 18px;    
+    text-align: left;  
+    width: fit-content;
+    height: fit-content; 
+    padding: 5px;
 }
-footer h3{
-    color: var(--color-letter-h);
-}
+
 
 footer a{
     color: var(--color-letter-p);
+    
 }
- 
- 
-@media(min-width: 500px){
+  
+footer li:hover{
+    background-color: var(--color-lettter-footer); 
+    border-radius: 8px;
+}
+
+
+@media(min-width: 500vw){
     .containe{
-      max-width: 1300px;
+      max-width: 1300vw;
       flex-direction: row;
       flex-wrap:wrap;
     }
   }
-  
