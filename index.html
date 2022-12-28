@@ -11,32 +11,26 @@
     
     <title>Modes Theme</title>
 </head>
-<body>
-
-
+<body> 
     <div class="containe"> 
         <form class="color-picker" action="">
             <fieldset> 
-                <input type="radio" 
-                name="theme" id="blue" checked>
-                <label for="theme" > </label>
- 
-                <input type="radio" 
-                name="theme" id="light">
-                <label for="theme" > </label>
+                <legend class="visually-hidden"> </legend>
                 
-                <input type="radio" 
-                name="theme" id="pink" > 
-                <label for="theme" > </label>
+                <label for="blue" class="visually-hidden">  </label>
+                <input type="radio" name="theme" id="blue" checked>
  
+                
+                <label for="light" class="visually-hidden">  </label>
+                <input type="radio" id="light" name="theme">
+                
+                <label for="pink" class="visually-hidden">  </label>
+                 <input type="radio"  id="pink" name="theme"> 
 
-                <input type="radio" 
-                name="theme" id="dark" >
-                <label for="theme" class="visually-hidden"> </label>
-            </fieldset>
-            
-
-
+                 <label for="dark" class="visually-hidden">   </label>
+                <input type="radio" id="dark" name="theme">
+                
+            </fieldset> 
         </form>
         <header>
             <h2>
@@ -52,7 +46,7 @@
             </div>
             
             <div class="title">
-                <H2><a href="">Contents</a></H2>
+                <H2>Contents</H2>
             </div>
 
             <div class="sections"> 
@@ -82,8 +76,7 @@
                             Eum voluptates ex modi, voluptatem dolore et vero doloremque!
                             Quis esse dolores possimus.
                     </section>
-            </div>   
-            
+            </div>    
 
             <footer>
                 <div class="footer-categories">
@@ -116,6 +109,8 @@
             </footer>
 
         </main>
-    </div>
+       
+    </div> 
+    <script src="./script.js"></script>
 </body>
-</html>
+</html> 
